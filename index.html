@@ -20,10 +20,18 @@ background: #DFDFDF;
 
     </style>
 
+    <script language="javascript" type="text/javascript">
+        function OnButtonClick() {
+            target = document.getElementById("result_image");
+            target.src = "logo.png";
+        }
+    </script>
+
   </head>
   <body>
     <img src="logo.png" />
     <p>はろーわーるど</p>
     <input id="gacha_button" type="button" value="？？？？" onclick="clickButton()">
+    <img src="" id="result_image">
   </body>
 </html>
