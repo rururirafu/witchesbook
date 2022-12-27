@@ -26,7 +26,10 @@ export async function getConfig() {
     const ids = master
       .filter(x => x.rarity === rarity)
       .map(x => x.id);
-    config.push({ rarity, prob, ids, name });
+    const names = master
+      .filter(x => x.rarity === rarity)
+      .map(x => x.name);
+    config.push({ rarity, prob, ids , names});
   });
   return config;
 }

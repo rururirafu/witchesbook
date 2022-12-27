@@ -53,11 +53,12 @@ background: #DFDFDF;
 		for (const entry of config) {
 			for (const charID of entry.ids) {
 				accum += entry.prob / entry.ids.length;
-				if (rval < accum) return { id: charID, rarity: entry.rarity, name: entry.name };
+				var name = entry.names[entry.ids.findIndex(charID)];
+				if (rval < accum) return { id: charID, rarity: entry.rarity, name: name };
 			}
 		}
 		throw new Error('should not reach here');
-}
+	}
 
 	async function clickGachaButton() {
 		const config = await getConfig();
