@@ -49,11 +49,14 @@ background: #DFDFDF;
 	function gacha (config, rval) {
 		let accum = 0;
 		for (const entry of config) {
-			for (const charID of entry.ids) {
+			// for (const charID of entry.ids) {
+			for (var i=0; i<entry.ids.length; i++) 
+				let charID = entry.ids[i];
 				accum += entry.prob / entry.ids.length;
-				let name = entry.names[0];
-				if (rval < accum) return { id: charID, rarity: entry.rarity };
+				if (rval < accum) return { id: charID, rarity: entry.rarity, name:entry.name[i] };
 			}
+
+			
 		}
 		throw new Error('should not reach here');
 	}

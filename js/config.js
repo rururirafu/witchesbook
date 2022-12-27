@@ -29,7 +29,7 @@ export async function getConfig() {
     const names = master
       .filter(x => x.rarity === rarity)
       .map(x => x.name);
-    config.push({ rarity, prob, ids , names});
+    config.push({ rarity, prob, ids, names });
   });
   return config;
 }
