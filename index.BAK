@@ -48,7 +48,7 @@ background: #DFDFDF;
   		throw new Error('should not reach here');
 	}
 
-        async function clickButton() {
+        async function clickGachaButton() {
 		const config = await getConfig();
 		filename = 'img/chr/' + gacha(config, 0.001).id + '.png';
 		target = document.getElementById("result_image");
@@ -56,7 +56,7 @@ background: #DFDFDF;
         }
 
 	const button = document.getElementById('gacha_button');
-	button.addEventListener('click', clickButton);
+	button.addEventListener('click', clickGachaButton);
 
     </script>
 
@@ -64,7 +64,7 @@ background: #DFDFDF;
   <body>
     <img src="img/sys/logo.png" class="title" />
     <p>SNSなどで使えるフリーアイコンのガチャです。 #魔女図鑑</p>
-    <input id="gacha_button" type="button" value="ガチャをひく" onclick="clickButton()">
+    <input id="gacha_button" type="button" value="ガチャをひく">
     <img src="transparent.png" id="result_image">
   </body>
 </html>
