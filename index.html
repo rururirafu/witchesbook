@@ -53,7 +53,7 @@ background: #DFDFDF;
 		for (const entry of config) {
 			for (const charID of entry.ids) {
 				accum += entry.prob / entry.ids.length;
-				if (rval < accum) return { id: charID };
+				if (rval < accum) return { id: charID, rarity: entry.rarity };
 			}
 		}
 		throw new Error('should not reach here');
@@ -69,7 +69,7 @@ background: #DFDFDF;
 			var target = document.getElementById(name);
           		target.src = filename;
 
-			document.getElementById(name).textContent = filename;
+			target.parentNode.textContent = filename;
 		}
 		
         }
