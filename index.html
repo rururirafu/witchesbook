@@ -38,6 +38,7 @@ background: #DFDFDF;
 	}
 
 	function gacha(config, rval) {
+
   		const table = createTable(config);
 
   		let accum = 0;
@@ -45,17 +46,18 @@ background: #DFDFDF;
   		  accum += prob;
   		  if (rval < accum) return cid;
   		}
+
   		throw new Error('should not reach here');
 	}
 
-        async function clickGachaButton() {
+	async function clickGachaButton() {
 		const config = await getConfig();
 		var filename = 'img/chr/' + gacha(config, 0.001).id + '.png';
 		target = document.getElementById("result_image");
           	target.src = filename;
         }
 
-	const button = document.getElementById('gacha_button');
+	button = document.getElementById('gacha_button');
 	button.addEventListener('click', () => {
 		clickGachaButton();
 	});
