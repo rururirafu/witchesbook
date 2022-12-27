@@ -24,35 +24,20 @@ background: #DFDFDF;
 
 	import { getConfig } from './js/config.js';
 
-	function createTable(config) {
-  		const table = [];
-  		for (const entry of config) {
-  			const nonPickProb = entry.prob * entry.pickups.reduce((acc, x) => acc - x[1], 1) / (entry.ids.length - entry.pickups.length);
-			for (const cid of entry.ids) {
-				const searched = entry.pickups.find(x => x[0] === cid);
-				const prob = (searched) ? entry.prob * searched[1] : nonPickProb;
-			table.push([cid, prob]);
-    			}
-  		}
-  	return table;
-	}
-
-	function gacha(config, rval) {
-
-  		const table = createTable(config);
-
-  		let accum = 0;
-  		for (const [cid, prob] of table) {
-  		  accum += prob;
-  		  if (rval < accum) return cid;
-  		}
-
-  		throw new Error('should not reach here');
-	}
+	function gacha (config, rval) {
+		let accum = 0;
+		for (const entry of config) {
+			for (const charID of entry.ids) {
+			accum += entry.prob / entry.ids.length;
+			if (rval < accum) return { id: charID };
+			}
+		}
+		throw new Error('should not reach here');
+}
 
 	async function clickGachaButton() {
 		const config = await getConfig();
-		var filename = 'img/chr/' + gacha(config, 0.001).id + '.png';
+		var filename = 'img/chr/' + gacha(config, 0.001) + '.png';
 		var target = document.getElementById("result_image");
           	target.src = filename;
         }

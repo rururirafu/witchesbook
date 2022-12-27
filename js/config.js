@@ -1,14 +1,7 @@
-function rarityOf(master, id) {
-  const me = master.find(x => x.id === id);
-  if (me) return me.rarity;
-  throw new Error(`no such ID is found: ${id}`);
-}
-
 async function getDataFromDB() {
   // data for gacha
   const info = {
     weights: [[5, 0.01], [4, 0.1], [3, 0.89]],
-    pickup: [['5001', 0.4], ['5002', 0.4], ['4001', 0.1]],
   };
   // data for character
   const master = [
@@ -33,9 +26,7 @@ export async function getConfig() {
     const ids = master
       .filter(x => x.rarity === rarity)
       .map(x => x.id);
-    const pickups = info.pickup
-      .filter(x => rarityOf(master, x[0]) === rarity);
-    config.push({ rarity, prob, pickups, ids });
+    config.push({ rarity, prob, ids });
   });
   return config;
 }
