@@ -9,9 +9,8 @@
 body {
   background-repeat: round;
   background-image: url(img/sys/bg.png);
-  width: 85px;
-  height: 85px;
-  border: 1px solid gray;
+  width: 512px;
+  height: 512px;
 }
 
 div { margin: 2em }
