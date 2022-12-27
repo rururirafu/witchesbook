@@ -21,6 +21,11 @@ li {
 	margin: 0 0.1em;
 }
 
+img.result {
+	width: 100%;
+	height; auto;
+}
+
 blockquote {
 position: relative;
 margin: 2em 0;
