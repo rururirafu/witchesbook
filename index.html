@@ -37,7 +37,8 @@ background: #DFDFDF;
 
 	async function clickGachaButton() {
 		const config = await getConfig();
-		var filename = 'img/chr/' + gacha(config, 0.001).id + '.png';
+		var r = Math.random();
+		var filename = 'img/chr/' + gacha(config, r).id + '.png';
 
 		for (var i = 0; i < 10; i++ ) {
 			var name = 'result_image' + i;
