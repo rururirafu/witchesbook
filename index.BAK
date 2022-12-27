@@ -7,7 +7,7 @@
     <style>
 
 body {
-  background-repeat: round;
+  background-repeat: repeat;
   background-image: url(img/sys/bg.png);
   width: 512px;
   height: 512px;
@@ -67,7 +67,8 @@ background: #DFDFDF;
 			var filename = 'img/chr/' + gacha(config, r).id + '.png';
 			var name = 'result_image' + i;
 			var target = document.getElementById(name);
-          		target.src = filename;
+          		target.src = 'r3.png';
+			target.style.background = 'url(' + filename + ')';
 		}
 		
         }
