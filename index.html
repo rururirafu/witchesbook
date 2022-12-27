@@ -50,13 +50,11 @@ background: #DFDFDF;
 		let accum = 0;
 		for (const entry of config) {
 			// for (const charID of entry.ids) {
-			for (var i=0; i<entry.ids.length; i++) 
+			for (var i=0; i<entry.ids.length; i++) {
 				var charID = entry.ids[i];
 				accum += entry.prob / entry.ids.length;
 				if (rval < accum) return { id: charID, rarity: entry.rarity, name:entry.name[i] };
 			}
-
-			
 		}
 		throw new Error('should not reach here');
 	}
