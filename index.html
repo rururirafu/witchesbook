@@ -38,8 +38,13 @@ background: #DFDFDF;
 	async function clickGachaButton() {
 		const config = await getConfig();
 		var filename = 'img/chr/' + gacha(config, 0.001).id + '.png';
-		var target = document.getElementById("result_image");
-          	target.src = filename;
+
+		for (int i = 0; i < 10; i++ ) {
+			var name = 'result_image' + i;
+			var target = document.getElementById(name);
+          		target.src = filename;
+		}
+		
         }
 
 	var button = document.getElementById('gacha_button');
@@ -53,7 +58,16 @@ background: #DFDFDF;
   <body>
     <img src="img/sys/logo.png" class="title" />
     <p>SNSなどで使えるフリーアイコンのガチャです。 #魔女図鑑</p>
-    <input id="gacha_button" type="button" value="ガチャをひく" />
-    <img src="transparent.png" id="result_image">
+    <input id="gacha_button" type="button" value="10連ガチャをひく" />
+	<img src="transparent.png" id="result_image0">
+	<img src="transparent.png" id="result_image1">
+	<img src="transparent.png" id="result_image2">
+	<img src="transparent.png" id="result_image3">
+	<img src="transparent.png" id="result_image4">
+	<img src="transparent.png" id="result_image5">
+	<img src="transparent.png" id="result_image6">
+	<img src="transparent.png" id="result_image7">
+	<img src="transparent.png" id="result_image8">
+	<img src="transparent.png" id="result_image9">
   </body>
 </html>
