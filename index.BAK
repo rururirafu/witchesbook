@@ -61,17 +61,13 @@ background: #DFDFDF;
 
 	async function clickGachaButton() {
 		const config = await getConfig();
-		
-		for (var i = 0; i < 10; i++ ) {
-			var r = Math.random();
-			var filename = 'img/chr/' + gacha(config, r).id + '.png';
-			var name = 'result_image' + i;
-			var target = document.getElementById(name);
-          		target.src = filename;
 
-			document.getElementById(name).textContent = filename;
-		}
-		
+		var r = Math.random();
+		var filename = 'img/chr/' + gacha(config, r).id + '.png';
+		var name = 'result_image' + '0';
+		var target = document.getElementById(name);
+          	target.src = filename;
+
         }
 
 	var button = document.getElementById('gacha_button');
@@ -83,22 +79,10 @@ background: #DFDFDF;
 
   </head>
   <body>
-    <img src="img/sys/logo.png" class="title" />
-    <p>SNSなどで使えるフリーアイコンのガチャです。 #魔女図鑑</p>
-    <input id="gacha_button" type="button" value="10連ガチャをひく" />
-	<ul>
-		<li><img src="transparent.png" id="result_image0" class="result"></li>
-		<li><img src="transparent.png" id="result_image1" class="result"></li>
-		<li><img src="transparent.png" id="result_image2" class="result"></li>
-		<li><img src="transparent.png" id="result_image3" class="result"></li>
-		<li><img src="transparent.png" id="result_image4" class="result"></li>
-	</ul>
-	<ul>
-		<li><img src="transparent.png" id="result_image5" class="result"></li>
-		<li><img src="transparent.png" id="result_image6" class="result"></li>
-		<li><img src="transparent.png" id="result_image7" class="result"></li>
-		<li><img src="transparent.png" id="result_image8" class="result"></li>
-		<li><img src="transparent.png" id="result_image9" class="result"></li>
-	</ul>
+	<img src="img/sys/logo.png" class="title" />
+	<p>SNSなどで使えるフリーアイコンのガチャです。 #魔女図鑑</p>
+	<input id="gacha_button" type="button" value="ガチャをひく" />
+	<img src="transparent.png" id="result_image0" class="result">
+	<p id="description">-</p>
   </body>
 </html>
