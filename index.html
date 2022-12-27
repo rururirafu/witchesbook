@@ -8,7 +8,7 @@
 
 div { margin: 2em }
 
-img { width: 100%; }
+img.title { width: 100%; }
 
 blockquote {
 position: relative;
@@ -20,18 +20,48 @@ background: #DFDFDF;
 
     </style>
 
-    <script language="javascript" type="text/javascript">
-        function clickButton() {
-            target = document.getElementById("result_image");
-            target.src = "logo.png";
+	<script language="javascript" type="module">
+
+	import { getConfig } from './js/config.js';
+
+	function createTable(config) {
+  		const table = [];
+  		for (const entry of config) {
+  			const nonPickProb = entry.prob * entry.pickups.reduce((acc, x) => acc - x[1], 1) / (entry.ids.length - entry.pickups.length);
+			for (const cid of entry.ids) {
+				const searched = entry.pickups.find(x => x[0] === cid);
+				const prob = (searched) ? entry.prob * searched[1] : nonPickProb;
+			table.push([cid, prob]);
+    			}
+  		}
+  	return table;
+	}
+
+	function gacha(config, rval) {
+  		const table = createTable(config);
+
+  		let accum = 0;
+  		for (const [cid, prob] of table) {
+  		  accum += prob;
+  		  if (rval < accum) return cid;
+  		}
+  		throw new Error('should not reach here');
+	}
+
+        async function clickButton() {
+		const config = await getConfig();
+		filename = 'img/chr/' + gacha(config, 0.001).id + '.png';
+		target = document.getElementById("result_image");
+          	target.src = filename;
         }
+
     </script>
 
   </head>
   <body>
-    <img src="logo.png" />
-    <p>はろーわーるど</p>
-    <input id="gacha_button" type="button" value="？？？？" onclick="clickButton()">
+    <img src="img/sys/logo.png" class="title" />
+    <p>SNSなどで使えるフリーアイコンのガチャです。 #魔女図鑑</p>
+    <input id="gacha_button" type="button" value="ガチャをひく" onclick="clickButton()">
     <img src="transparent.png" id="result_image">
   </body>
 </html>
