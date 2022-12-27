@@ -12,7 +12,7 @@ async function getDataFromDB() {
   const master = lines.slice(1).map(line => {
     const values = line.split(',');
     return keys.reduce((obj, key, index) => {
-      obj[key] = values[index];
+      obj[key] = key === 'rarity' ? parseInt(values[index], 10) : values[index];
       return obj;
     }, {});
   });
