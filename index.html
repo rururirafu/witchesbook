@@ -39,7 +39,7 @@ background: #DFDFDF;
 		const config = await getConfig();
 		var filename = 'img/chr/' + gacha(config, 0.001).id + '.png';
 
-		for (int i = 0; i < 10; i++ ) {
+		for (var i = 0; i < 10; i++ ) {
 			var name = 'result_image' + i;
 			var target = document.getElementById(name);
           		target.src = filename;
