@@ -37,7 +37,7 @@ background: #DFDFDF;
 
 	async function clickGachaButton() {
 		const config = await getConfig();
-		var filename = 'img/chr/' + gacha(config, 0.001) + '.png';
+		var filename = 'img/chr/' + gacha(config, 0.001).id + '.png';
 		var target = document.getElementById("result_image");
           	target.src = filename;
         }
