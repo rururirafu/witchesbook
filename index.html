@@ -53,7 +53,7 @@ background: #DFDFDF;
 		for (const entry of config) {
 			for (const charID of entry.ids) {
 				accum += entry.prob / entry.ids.length;
-				if (rval < accum) return { id: charID, rarity: entry.rarity };
+				if (rval < accum) return { id: charID, rarity: entry.rarity }
 			}
 		}
 		throw new Error('should not reach here');
@@ -63,13 +63,14 @@ background: #DFDFDF;
 		const config = await getConfig();
 
 		var r = Math.random();
-		var filename = 'img/chr/' + gacha(config, r).id + '.png';
+		var gacharesult = gacha(confing, r);
+		var filename = 'img/chr/' + gacharesult.id + '.png';
 		var name = 'result_image' + '0';
 		var target = document.getElementById(name);
           	target.src = filename;
 
 		var description = document.getElementById('description');
-		description.textContent = filename:
+		description.textContent = '★' + gacharesult.rarity:
 
         }
 

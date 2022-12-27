@@ -63,10 +63,14 @@ background: #DFDFDF;
 		const config = await getConfig();
 
 		var r = Math.random();
-		var filename = 'img/chr/' + gacha(config, r).id + '.png';
+		var gacharesult = gacha(confing, r);
+		var filename = 'img/chr/' + gacharesult.id + '.png';
 		var name = 'result_image' + '0';
 		var target = document.getElementById(name);
           	target.src = filename;
+
+		var description = document.getElementById('description');
+		description.textContent = '★' + gacharesult.rarity:
 
         }
 
