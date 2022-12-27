@@ -51,7 +51,7 @@ background: #DFDFDF;
 		for (const entry of config) {
 			// for (const charID of entry.ids) {
 			for (var i=0; i<entry.ids.length; i++) 
-				let charID = entry.ids[i];
+				var charID = entry.ids[i];
 				accum += entry.prob / entry.ids.length;
 				if (rval < accum) return { id: charID, rarity: entry.rarity, name:entry.name[i] };
 			}
