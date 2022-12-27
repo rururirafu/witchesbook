@@ -57,7 +57,7 @@ background: #DFDFDF;
           	target.src = filename;
         }
 
-	const button = document.getElementById('gacha_button');
+	button = document.getElementById('gacha_button');
 	button.addEventListener('click', () => {
 		clickGachaButton();
 	});
