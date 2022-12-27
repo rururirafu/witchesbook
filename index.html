@@ -9,8 +9,6 @@
 body {
   background-repeat: repeat;
   background-image: url(img/sys/bg.png);
-  width: 512px;
-  height: 512px;
 }
 
 div { margin: 2em }
@@ -53,8 +51,8 @@ background: #DFDFDF;
 		for (const entry of config) {
 			for (const charID of entry.ids) {
 				accum += entry.prob / entry.ids.length;
-				var name = entry.names[entry.ids.findIndex(charID)];
-				if (rval < accum) return { id: charID, rarity: entry.rarity, name: name };
+				let name = entry.names[0];
+				if (rval < accum) return { id: charID, rarity: entry.rarity };
 			}
 		}
 		throw new Error('should not reach here');
