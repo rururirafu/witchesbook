@@ -2,13 +2,24 @@
 <html lang="ja-JP">
   <head>
     <meta charset="utf-8">
-    <title>My test page</title>
+    <title>#魔女図鑑 フリーアイコンガチャ</title>
 
     <style>
 
 div { margin: 2em }
 
 img.title { width: 100%; }
+
+
+ul {
+	display: flex;
+	justify-content: center;
+}
+
+li {
+	list-style: none;
+	margin: 0 0.1em;
+}
 
 blockquote {
 position: relative;
@@ -60,15 +71,17 @@ background: #DFDFDF;
     <img src="img/sys/logo.png" class="title" />
     <p>SNSなどで使えるフリーアイコンのガチャです。 #魔女図鑑</p>
     <input id="gacha_button" type="button" value="10連ガチャをひく" />
-	<img src="transparent.png" id="result_image0">
-	<img src="transparent.png" id="result_image1">
-	<img src="transparent.png" id="result_image2">
-	<img src="transparent.png" id="result_image3">
-	<img src="transparent.png" id="result_image4">
-	<img src="transparent.png" id="result_image5">
-	<img src="transparent.png" id="result_image6">
-	<img src="transparent.png" id="result_image7">
-	<img src="transparent.png" id="result_image8">
-	<img src="transparent.png" id="result_image9">
+	<ul>
+		<li><img src="transparent.png" id="result_image0"></li>
+		<li><img src="transparent.png" id="result_image1"></li>
+		<li><img src="transparent.png" id="result_image2"></li>
+		<li><img src="transparent.png" id="result_image3"></li>
+		<li><img src="transparent.png" id="result_image4"></li>
+		<li><img src="transparent.png" id="result_image5"></li>
+		<li><img src="transparent.png" id="result_image6"></li>
+		<li><img src="transparent.png" id="result_image7"></li>
+		<li><img src="transparent.png" id="result_image8"></li>
+		<li><img src="transparent.png" id="result_image9"></li>
+	</ul>
   </body>
 </html>
