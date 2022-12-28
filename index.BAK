@@ -19,7 +19,7 @@ div#container {
 img.title {
 	width: 95%;
 	display: block;
-	margin: 2rem auto;
+	margin: 1rem auto;
 }
 
 img.result {
@@ -59,7 +59,7 @@ p {
 	text-align: center;
 }
 
-#table {
+#black #table {
 	background: rgba(0,0,0,0.5);
 	color:#FEFEFE;
 	margin: 0 auto;
@@ -172,9 +172,11 @@ p {
 	#魔女図鑑
 	</p>
 
-	<p id="table">
+	<div id="black">
 		排出率一覧
-	</p>
+		<p id="table"></p>
+		<p>計算上、合計が100%にならない場合があります。</p>
+	</div>
 	</div>
   </body>
 </html>

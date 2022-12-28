@@ -59,6 +59,14 @@ p {
 	text-align: center;
 }
 
+#black {
+	background: rgba(0,0,0,0.5);
+	color:#FEFEFE;
+	margin: 0 auto;
+	text-align: center;
+	padding: 1rem;
+}
+
 #table {
 	background: rgba(0,0,0,0.5);
 	color:#FEFEFE;
@@ -172,9 +180,11 @@ p {
 	#魔女図鑑
 	</p>
 
-	<p id="table">
+	<div id="black">
 		排出率一覧
-	</p>
+		<p id="table"></p>
+		<p>計算上、合計が100%にならない場合があります。</p>
+	</div>
 	</div>
   </body>
 </html>
