@@ -59,7 +59,15 @@ p {
 	text-align: center;
 }
 
-#black #table {
+#black {
+	background: rgba(0,0,0,0.5);
+	color:#FEFEFE;
+	margin: 0 auto;
+	text-align: center;
+	padding: 1rem;
+}
+
+#table {
 	background: rgba(0,0,0,0.5);
 	color:#FEFEFE;
 	margin: 0 auto;
