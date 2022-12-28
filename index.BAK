@@ -28,8 +28,12 @@ li {
 }
 
 img.result {
-	width: 100%;
+	width: 80%;
 	height; auto;
+	border: 50px solid #746129;
+	border-image-source: url(img/sys/frame.png);
+	border-image-slice:84 72 80 60;
+
 }
 
 blockquote {
@@ -53,7 +57,7 @@ background: #DFDFDF;
 			for (var i=0; i<entry.ids.length; i++) {
 				var charID = entry.ids[i];
 				accum += entry.prob / entry.ids.length;
-				if (rval < accum) return { id: charID, rarity: entry.rarity, name:entry.name[i] };
+				if (rval < accum) return { id: charID, rarity: entry.rarity, name:entry.names[i] };
 			}
 		}
 		throw new Error('should not reach here');
