@@ -45,7 +45,45 @@ img.result {
 }
 
 p#name {
+	margin: 1rem;
+	font-size:5em;
+	line-height:0.95em;
+	font-weight:bold;
 	font-family: 'UnifrakturMaguntia', cursive;
+}
+
+p.rarity5 {
+	color: transparent;
+	background: repeating-linear-gradient(45deg,
+		#E60012 0.1em 0.2em,
+		#F39800 0.2em 0.3em,
+		#FFF100 0.3em 0.4em,
+		#009944 0.4em 0.5em,
+		#0068B7 0.5em 0.6em,
+		#1D2088 0.7em 0.8em,
+		#CFA7CD 0.8em 0.9em);
+	text-shadow : 
+		0 0 0.1em rgba(255,255,255,0.05),
+		0.01em 0.04em 0.03em rgba(255,255,255,0.4);
+	-webkit-background-clip: text;
+}
+
+p.rarity4 {
+	color: transparent;
+	background: repeating-linear-gradient(0deg, #B67B03 0.1em, #DAAF08 0.2em, #FEE9A0 0.3em, #DAAF08 0.4em, #B67B03 0.5em); 
+	text-shadow : 
+		0 0 0.1em rgba(255,255,255,0.05),
+		0.01em 0.04em 0.03em rgba(255,255,255,0.4);
+	-webkit-background-clip: text;
+}
+
+p.rarity3 {
+	color: transparent;
+	background : rgba(0,0,0,1);
+	text-shadow : 
+		0 0 0.1em rgba(255,255,255,0.05),
+		0.01em 0.04em 0.03em rgba(255,255,255,0.4);
+	-webkit-background-clip : text;
 }
 
 button#pull {
@@ -113,6 +151,14 @@ p {
 		var description = document.getElementById('name');
 		description.textContent = '★' + gacharesult.rarity + ' ' + gacharesult.name;
 
+		if (gacharesult.rarity == 5) {
+			table.setAttribute("class", "rarity5");
+		} else if (gacharesult.rarity == 4) {
+			table.setAttribute("class", "rarity4");
+		} else {
+			table.setAttribute("class", "rarity3");
+		}
+
         }
 
 	var button = document.getElementById('pull');
@@ -174,14 +220,16 @@ p {
 	<div id="container">
 	<img src="img/sys/logo.png" class="title" />
 
+	<div>
 	<img src="img/sys/cover.png" id="result_image0" class="result" />
-	<p id="name"> </p>
+	<p id="name" class="rarity3">★0 None</p>
+	</div>
 
 	<button id="pull">ガチャをひく</button>
 
 	<p>
 	SNSなどで使えるフリーアイコンのガチャです。<br />
-	表示された画像をお使いいただけます。<br />
+	ガチャをひくボタンを押して枠内に表示された画像をお使いいただけます。<br />
 	自分の手描き画像を読み込ませたAIが作成しています。<br />
 	#魔女図鑑<br />
 	<br />
