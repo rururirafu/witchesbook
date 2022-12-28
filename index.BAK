@@ -67,14 +67,6 @@ p {
 	padding: 1rem;
 }
 
-#table {
-	background: rgba(0,0,0,0.5);
-	color:#FEFEFE;
-	margin: 0 auto;
-	text-align: center;
-	padding: 1rem;
-}
-
     </style>
 
 	<script language="javascript" type="module">
@@ -159,7 +151,7 @@ p {
 
 	table.appendChild(tbody);
 	page.appendChild(table);
-	table.setAttribute("id", "table");
+	table.setAttribute("id", "black");
 
     </script>
 
