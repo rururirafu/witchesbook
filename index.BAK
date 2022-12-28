@@ -222,14 +222,14 @@ p {
 
 	<div>
 	<img src="img/sys/cover.png" id="result_image0" class="result" />
-	<p id="name" class="rarity3">★0 None</p>
+	<p id="name">　</p>
 	</div>
 
 	<button id="pull">ガチャをひく</button>
 
 	<p>
 	SNSなどで使えるフリーアイコンのガチャです。<br />
-	ガチャをひくボタンを押して表示された画像をお使いいただけます。<br />
+	ガチャをひくボタンを押して枠内に表示された画像をお使いいただけます。<br />
 	自分の手描き画像を読み込ませたAIが作成しています。<br />
 	#魔女図鑑<br />
 	<br />

@@ -152,11 +152,11 @@ p {
 		description.textContent = '★' + gacharesult.rarity + ' ' + gacharesult.name;
 
 		if (gacharesult.rarity == 5) {
-			table.setAttribute("class", "rarity5");
+			description.setAttribute("class", "rarity5");
 		} else if (gacharesult.rarity == 4) {
-			table.setAttribute("class", "rarity4");
+			description.setAttribute("class", "rarity4");
 		} else {
-			table.setAttribute("class", "rarity3");
+			description.setAttribute("class", "rarity3");
 		}
 
         }
@@ -222,7 +222,7 @@ p {
 
 	<div>
 	<img src="img/sys/cover.png" id="result_image0" class="result" />
-	<p id="name" class="rarity3">★0 None</p>
+	<p id="name">　</p>
 	</div>
 
 	<button id="pull">ガチャをひく</button>
