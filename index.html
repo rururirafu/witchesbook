@@ -62,7 +62,8 @@ p {
 #table {
 	background: rgba(0,0,0,0.5);
 	color:#FEFEFE;
-	margin: 0;
+	margin: 0 auto;
+	text-align: center;
 	padding: 1rem;
 }
 
@@ -135,9 +136,9 @@ p {
 			var td1 = document.createElement("td");
 			var td2 = document.createElement("td");
 
-			td0.textContent = rarity;
+			td0.textContent = '★' + rarity;
 			td1.textContent = name;
-			td2.textContent = Math.round(discharge_rate * 10000) / 10000;
+			td2.textContent = (Math.round(discharge_rate * 10000) / 10000) * 100 + '%';
 
 			tr.appendChild(td0);
 			tr.appendChild(td1);
