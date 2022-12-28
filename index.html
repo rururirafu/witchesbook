@@ -97,7 +97,7 @@ p {
 		clickGachaButton();
 	});
 
-	var mybody = document.getElementByID('table');
+	var mybody = document.getElementById('table');
 	var mytable = document.createElement("table");
 	var mytbody = document.createElement("tbody");
 	var mytr = document.createElement("tr");
@@ -105,9 +105,9 @@ p {
 	var mytd1 = document.createElement("td");
 	var mytd2 = document.createElement("td");
 
-	myth.textContent ="排出率一覧";
-	mytd1.textContent = "あいうえお";
-	mytd2.textContent = "かきくけこ";
+	myth.textContent ="レアリティ";
+	mytd1.textContent = "名前";
+	mytd2.textContent = "排出率";
 
 	mytr.appendChild(myth);
 	mytr.appendChild(mytd1);
