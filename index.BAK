@@ -59,7 +59,7 @@ p {
 	text-align: center;
 }
 
-p#table {
+#table {
 	background: rgba(0,0,0,0.5);
 	color:#FEFEFE;
 	margin: 0;
@@ -137,7 +137,7 @@ p#table {
 
 			td0.textContent = rarity;
 			td1.textContent = name;
-			td2.textContent = discharge_rate;
+			td2.textContent = Math.round(discharge_rate * 10000) / 10000;
 
 			tr.appendChild(td0);
 			tr.appendChild(td1);
@@ -150,6 +150,7 @@ p#table {
 
 	table.appendChild(tbody);
 	page.appendChild(table);
+	table.setAttribute("id", "table");
 
     </script>
 
