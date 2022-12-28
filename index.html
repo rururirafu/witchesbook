@@ -4,6 +4,16 @@
     <meta charset="utf-8">
     <title>#魔女図鑑 フリーアイコンガチャ</title>
 
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+	<style>
+	@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+	</style>
+
+
     <style>
 
 body {
@@ -32,6 +42,10 @@ img.result {
 	border-image-slice: 84 72 80 60;
 	border-image-repeat: round;
 
+}
+
+p#name {
+	font-family: 'UnifrakturMaguntia', cursive;
 }
 
 button#pull {
@@ -96,7 +110,7 @@ p {
 		var target = document.getElementById(name);
           	target.src = filename;
 
-		var description = document.getElementById('description');
+		var description = document.getElementById('name');
 		description.textContent = '★' + gacharesult.rarity + ' ' + gacharesult.name;
 
         }
@@ -161,7 +175,7 @@ p {
 	<img src="img/sys/logo.png" class="title" />
 
 	<img src="img/sys/cover.png" id="result_image0" class="result" />
-	<p id="description"> </p>
+	<p id="name"> </p>
 
 	<button id="pull">ガチャをひく</button>
 
