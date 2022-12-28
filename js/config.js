@@ -7,7 +7,9 @@ async function getDataFromDB() {
 // Read the CSV file and parse its contents into an array of objects
   const response = await fetch('res/data.csv');
   const text = await response.text();
-  const lines = text.split('\n');
+  var CR = String.fromCharCode(13);
+  var LF = String.fromCharCode(10);
+  const lines = text.split(CR + LF);
   const keys = lines[0].split(',');
   const master = lines.slice(1).map(line => {
     const values = line.split(',');
