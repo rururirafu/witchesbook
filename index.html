@@ -7,8 +7,9 @@
     <style>
 
 body {
-  background-repeat: repeat;
-  background-image: url(img/sys/bg.png);
+	background-repeat: repeat;
+	background-image: url(img/sys/bg.png);
+	margin: 0;
 }
 
 div#container { 
@@ -58,6 +59,13 @@ p {
 	text-align: center;
 }
 
+p#table {
+	background: rgba(0,0,0,0.5);
+	color:#FEFEFE;
+	margin: 0;
+	padding: 1rem;
+}
+
     </style>
 
 	<script language="javascript" type="module">
@@ -97,24 +105,51 @@ p {
 		clickGachaButton();
 	});
 
-	var mybody = document.getElementById('table');
-	var mytable = document.createElement("table");
-	var mytbody = document.createElement("tbody");
-	var mytr = document.createElement("tr");
-	var myth = document.createElement("th");
-	var mytd1 = document.createElement("td");
-	var mytd2 = document.createElement("td");
+	var page = document.getElementById('table');
+	var table = document.createElement("table");
+	var tbody = document.createElement("tbody");
+	var tr_header = document.createElement("tr");
+	var th0 = document.createElement("th");
+	var th1 = document.createElement("th");
+	var th2 = document.createElement("th");
 
-	myth.textContent ="レアリティ";
-	mytd1.textContent = "名前";
-	mytd2.textContent = "排出率";
+	th0.textContent ="レアリティ";
+	th1.textContent = "名前";
+	th2.textContent = "排出率";
 
-	mytr.appendChild(myth);
-	mytr.appendChild(mytd1);
-	mytr.appendChild(mytd2);
-	mytbody.appendChild(mytr);
-	mytable.appendChild(mytbody);
-	mybody.appendChild(mytable);
+	tr_header.appendChild(th0);
+	tr_header.appendChild(th1);
+	tr_header.appendChild(th2);
+
+	tbody.appendChild(tr_header);
+
+	const config = await getConfig();
+	for (const entry of config) {
+		for (var i=0; i<entry.ids.length; i++) {
+			var rarity = entry.rarity;
+			var discharge_rate =  entry.prob / entry.ids.length;
+			var name = entry.names[i];
+			
+			var tr = document.createElement("tr");
+			var td0 = document.createElement("td");
+			var td1 = document.createElement("td");
+			var td2 = document.createElement("td");
+
+			td0.textContent = rarity;
+			td1.textContent = name;
+			td2.textContent = discharge_rate;
+
+			tr.appendChild(td0);
+			tr.appendChild(td1);
+			tr.appendChild(td2);
+
+			tbody.appendChild(tr);
+
+		}
+	}
+
+	table.appendChild(tbody);
+	page.appendChild(table);
 
     </script>
 
@@ -135,7 +170,7 @@ p {
 	</p>
 
 	<p id="table">
-
+		排出率一覧
 	</p>
 	</div>
   </body>
