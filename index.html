@@ -11,38 +11,51 @@ body {
   background-image: url(img/sys/bg.png);
 }
 
-div { margin: 2em }
-
-img.title { width: 100%; }
-
-
-ul {
-	display: flex;
-	justify-content: center;
-	padding: 0;
+div#container { 
+	
 }
 
-li {
-	list-style: none;
-	margin: 0 0.1em;
+img.title {
+	width: 95%;
+	display: block;
+	margin: 0 auto;
 }
 
 img.result {
 	width: 80%;
 	height; auto;
+	display: block;
+	margin: 0 auto;
 	border: 50px solid #746129;
 	border-image-source: url(img/sys/frame.png);
-	border-image-slice:84 72 80 60;
-	border-image-repeat:round;
+	border-image-slice: 84 72 80 60;
+	border-image-repeat: round;
 
 }
 
-blockquote {
-position: relative;
-margin: 2em 0;
-padding: 1.2em;
-font-size: .9em;
-background: #DFDFDF;
+button#pull {
+	display: block;
+	margin: 0 auto;
+	align-self:center;
+	background:transparent;
+	padding:1rem 1rem;
+	color:#FEFEFE;
+	font-size:2rem;
+	box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
+	border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+	border: 1rem solid #746129;
+	border-image-source: url(img/sys/button.png);
+	border-image-slice: 12 fill;
+	border-image-repeat: round;
+}
+button#pull:hover
+{
+	filter: brightness(0.6);
+	transition:0.3;
+}
+
+p {
+	text-align: center;
 }
 
     </style>
@@ -79,19 +92,51 @@ background: #DFDFDF;
 
         }
 
-	var button = document.getElementById('gacha_button');
+	var button = document.getElementById('pull');
 	button.addEventListener('click', () => {
 		clickGachaButton();
 	});
+
+	var mybody = document.getElementsByID('table');
+	var mytable = document.createElement("table");
+	var mytbody = document.createElement("tbody");
+	var mytr = document.createElement("tr");
+	var myth = document.createElement("th");
+	var mytd1 = document.createElement("td");
+	var mytd2 = document.createElement("td");
+
+	myth.textContent ="排出率一覧";
+	mytd1.textContent = "あいうえお";
+	mytd2.textContent = "かきくけこ";
+
+	mytr.appendChild(myth);
+	mytr.appendChild(mytd1);
+	mytr.appendChild(mytd2);
+	mytbody.appendChild(mytr);
+	mytable.appendChild(mytbody);
+	mybody.appendChild(mytable);
 
     </script>
 
   </head>
   <body>
+	<div id="container">
 	<img src="img/sys/logo.png" class="title" />
-	<p>SNSなどで使えるフリーアイコンのガチャです。 #魔女図鑑</p>
-	<input id="gacha_button" type="button" value="ガチャをひく" />
-	<img src="transparent.png" id="result_image0" class="result">
-	<p id="description">-</p>
+
+	<img src="transparent.png" id="result_image0" class="result" />
+	<p id="description"> </p>
+
+	<button id="pull">ガチャをひく</button>
+
+	<p>
+	SNSなどで使えるフリーアイコンのガチャです。<br />
+	表示された画像をフリーアイコンとしてお使いいただけます。<br />
+	#魔女図鑑
+	</p>
+
+	<p id="table">
+
+	</p>
+	</div>
   </body>
 </html>
